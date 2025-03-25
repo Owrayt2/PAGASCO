@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            siticonePanel1 = new SiticoneNetCoreUI.SiticonePanel();
+            ForgotPassBtn = new SiticoneNetCoreUI.SiticonePanel();
+            ForgotpasBtn = new SiticoneNetCoreUI.SiticoneButton();
+            LoginBackBtn = new FontAwesome.Sharp.IconButton();
             loginBtn = new SiticoneNetCoreUI.SiticoneButton();
             iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
             passwordTbx = new SiticoneNetCoreUI.SiticoneTextBox();
@@ -41,69 +43,164 @@
             createaccBtn = new SiticoneNetCoreUI.SiticoneButton();
             LoginExtBtn = new FontAwesome.Sharp.IconButton();
             ManagerLabel = new SiticoneNetCoreUI.SiticoneShimmerLabel();
-            LoginBackBtn = new FontAwesome.Sharp.IconButton();
-            siticonePanel1.SuspendLayout();
+            ForgotPassBtn.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             siticonePanel2.SuspendLayout();
             SuspendLayout();
             // 
-            // siticonePanel1
+            // ForgotPassBtn
             // 
-            siticonePanel1.AcrylicTintColor = Color.FromArgb(128, 255, 255, 255);
-            siticonePanel1.BackColor = Color.Transparent;
-            siticonePanel1.BorderAlignment = System.Drawing.Drawing2D.PenAlignment.Center;
-            siticonePanel1.BorderDashPattern = null;
-            siticonePanel1.BorderGradientEndColor = Color.Purple;
-            siticonePanel1.BorderGradientStartColor = Color.Blue;
-            siticonePanel1.BorderThickness = 2F;
-            siticonePanel1.Controls.Add(LoginBackBtn);
-            siticonePanel1.Controls.Add(loginBtn);
-            siticonePanel1.Controls.Add(iconPictureBox2);
-            siticonePanel1.Controls.Add(passwordTbx);
-            siticonePanel1.Controls.Add(iconPictureBox1);
-            siticonePanel1.Controls.Add(usernameTbx);
-            siticonePanel1.Controls.Add(siticoneLabel3);
-            siticonePanel1.Controls.Add(siticoneLabel1);
-            siticonePanel1.Controls.Add(PagascoLabel);
-            siticonePanel1.CornerRadiusBottomLeft = 0F;
-            siticonePanel1.CornerRadiusBottomRight = 0F;
-            siticonePanel1.CornerRadiusTopLeft = 0F;
-            siticonePanel1.CornerRadiusTopRight = 0F;
-            siticonePanel1.Dock = DockStyle.Left;
-            siticonePanel1.EnableAcrylicEffect = false;
-            siticonePanel1.EnableMicaEffect = false;
-            siticonePanel1.EnableRippleEffect = false;
-            siticonePanel1.FillColor = Color.FromArgb(38, 70, 83);
-            siticonePanel1.GradientColors = new Color[]
+            ForgotPassBtn.AcrylicTintColor = Color.FromArgb(128, 255, 255, 255);
+            ForgotPassBtn.BackColor = Color.Transparent;
+            ForgotPassBtn.BorderAlignment = System.Drawing.Drawing2D.PenAlignment.Center;
+            ForgotPassBtn.BorderDashPattern = null;
+            ForgotPassBtn.BorderGradientEndColor = Color.Purple;
+            ForgotPassBtn.BorderGradientStartColor = Color.Blue;
+            ForgotPassBtn.BorderThickness = 2F;
+            ForgotPassBtn.Controls.Add(ForgotpasBtn);
+            ForgotPassBtn.Controls.Add(LoginBackBtn);
+            ForgotPassBtn.Controls.Add(loginBtn);
+            ForgotPassBtn.Controls.Add(iconPictureBox2);
+            ForgotPassBtn.Controls.Add(passwordTbx);
+            ForgotPassBtn.Controls.Add(iconPictureBox1);
+            ForgotPassBtn.Controls.Add(usernameTbx);
+            ForgotPassBtn.Controls.Add(siticoneLabel3);
+            ForgotPassBtn.Controls.Add(siticoneLabel1);
+            ForgotPassBtn.Controls.Add(PagascoLabel);
+            ForgotPassBtn.CornerRadiusBottomLeft = 0F;
+            ForgotPassBtn.CornerRadiusBottomRight = 0F;
+            ForgotPassBtn.CornerRadiusTopLeft = 0F;
+            ForgotPassBtn.CornerRadiusTopRight = 0F;
+            ForgotPassBtn.Dock = DockStyle.Left;
+            ForgotPassBtn.EnableAcrylicEffect = false;
+            ForgotPassBtn.EnableMicaEffect = false;
+            ForgotPassBtn.EnableRippleEffect = false;
+            ForgotPassBtn.FillColor = Color.FromArgb(38, 70, 83);
+            ForgotPassBtn.GradientColors = new Color[]
     {
     Color.White,
     Color.LightGray,
     SystemColors.GradientActiveCaption
     };
-            siticonePanel1.GradientPositions = new float[]
+            ForgotPassBtn.GradientPositions = new float[]
     {
     0F,
     0.5F,
     1F
     };
-            siticonePanel1.Location = new Point(0, 0);
-            siticonePanel1.Name = "siticonePanel1";
-            siticonePanel1.PatternStyle = System.Drawing.Drawing2D.HatchStyle.Max;
-            siticonePanel1.RippleAlpha = 50;
-            siticonePanel1.RippleAlphaDecrement = 3;
-            siticonePanel1.RippleColor = Color.FromArgb(50, 255, 255, 255);
-            siticonePanel1.RippleMaxSize = 600F;
-            siticonePanel1.RippleSpeed = 15F;
-            siticonePanel1.ShowBorder = true;
-            siticonePanel1.Size = new Size(529, 643);
-            siticonePanel1.TabIndex = 1;
-            siticonePanel1.TabStop = true;
-            siticonePanel1.UseBorderGradient = false;
-            siticonePanel1.UseMultiGradient = false;
-            siticonePanel1.UsePatternTexture = false;
-            siticonePanel1.UseRadialGradient = false;
-            siticonePanel1.Paint += siticonePanel1_Paint;
+            ForgotPassBtn.Location = new Point(0, 0);
+            ForgotPassBtn.Margin = new Padding(4);
+            ForgotPassBtn.Name = "ForgotPassBtn";
+            ForgotPassBtn.PatternStyle = System.Drawing.Drawing2D.HatchStyle.Max;
+            ForgotPassBtn.RippleAlpha = 50;
+            ForgotPassBtn.RippleAlphaDecrement = 3;
+            ForgotPassBtn.RippleColor = Color.FromArgb(50, 255, 255, 255);
+            ForgotPassBtn.RippleMaxSize = 600F;
+            ForgotPassBtn.RippleSpeed = 15F;
+            ForgotPassBtn.ShowBorder = true;
+            ForgotPassBtn.Size = new Size(661, 804);
+            ForgotPassBtn.TabIndex = 1;
+            ForgotPassBtn.TabStop = true;
+            ForgotPassBtn.UseBorderGradient = false;
+            ForgotPassBtn.UseMultiGradient = false;
+            ForgotPassBtn.UsePatternTexture = false;
+            ForgotPassBtn.UseRadialGradient = false;
+            ForgotPassBtn.Paint += siticonePanel1_Paint;
+            ForgotPassBtn.MouseDown += Panel_MouseDown;
+            // 
+            // ForgotpasBtn
+            // 
+            ForgotpasBtn.AccessibleDescription = "The default button control that accept input though the mouse, touch and keyboard";
+            ForgotpasBtn.AccessibleName = "forgot password?";
+            ForgotpasBtn.AutoSizeBasedOnText = false;
+            ForgotpasBtn.BackColor = Color.Transparent;
+            ForgotpasBtn.BadgeBackColor = Color.Red;
+            ForgotpasBtn.BadgeFont = new Font("Segoe UI", 8F, FontStyle.Bold);
+            ForgotpasBtn.BadgeValue = 0;
+            ForgotpasBtn.BadgeValueForeColor = Color.White;
+            ForgotpasBtn.BorderColor = Color.Transparent;
+            ForgotpasBtn.BorderWidth = 2;
+            ForgotpasBtn.ButtonBackColor = Color.Transparent;
+            ForgotpasBtn.ButtonImage = null;
+            ForgotpasBtn.CanBeep = true;
+            ForgotpasBtn.CanGlow = true;
+            ForgotpasBtn.CanShake = true;
+            ForgotpasBtn.ContextMenuStripEx = null;
+            ForgotpasBtn.CornerRadiusBottomLeft = 0;
+            ForgotpasBtn.CornerRadiusBottomRight = 0;
+            ForgotpasBtn.CornerRadiusTopLeft = 0;
+            ForgotpasBtn.CornerRadiusTopRight = 0;
+            ForgotpasBtn.CustomCursor = Cursors.Default;
+            ForgotpasBtn.DisabledTextColor = Color.FromArgb(150, 150, 150);
+            ForgotpasBtn.EnableLongPress = false;
+            ForgotpasBtn.EnablePressAnimation = true;
+            ForgotpasBtn.EnableRippleEffect = true;
+            ForgotpasBtn.EnableShadow = false;
+            ForgotpasBtn.EnableTextWrapping = false;
+            ForgotpasBtn.Font = new Font("MS Reference Sans Serif", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ForgotpasBtn.GlowColor = Color.FromArgb(244, 241, 222);
+            ForgotpasBtn.GlowIntensity = 100;
+            ForgotpasBtn.GlowRadius = 20F;
+            ForgotpasBtn.GradientBackground = false;
+            ForgotpasBtn.GradientColor = Color.FromArgb(114, 168, 255);
+            ForgotpasBtn.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            ForgotpasBtn.HintText = null;
+            ForgotpasBtn.HoverBackColor = Color.FromArgb(38, 70, 83);
+            ForgotpasBtn.HoverFontStyle = FontStyle.Regular;
+            ForgotpasBtn.HoverTextColor = Color.FromArgb(244, 241, 222);
+            ForgotpasBtn.HoverTransitionDuration = 250;
+            ForgotpasBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            ForgotpasBtn.ImagePadding = 5;
+            ForgotpasBtn.ImageSize = new Size(16, 16);
+            ForgotpasBtn.IsRadial = false;
+            ForgotpasBtn.IsReadOnly = false;
+            ForgotpasBtn.IsToggleButton = false;
+            ForgotpasBtn.IsToggled = false;
+            ForgotpasBtn.Location = new Point(198, 579);
+            ForgotpasBtn.LongPressDurationMS = 1000;
+            ForgotpasBtn.Name = "ForgotpasBtn";
+            ForgotpasBtn.NormalFontStyle = FontStyle.Regular;
+            ForgotpasBtn.ParticleColor = Color.FromArgb(200, 200, 200);
+            ForgotpasBtn.ParticleCount = 15;
+            ForgotpasBtn.PressAnimationScale = 0.97F;
+            ForgotpasBtn.PressedBackColor = Color.FromArgb(38, 70, 83);
+            ForgotpasBtn.PressedFontStyle = FontStyle.Regular;
+            ForgotpasBtn.PressTransitionDuration = 150;
+            ForgotpasBtn.ReadOnlyTextColor = Color.FromArgb(231, 111, 81);
+            ForgotpasBtn.RippleColor = Color.FromArgb(255, 255, 255);
+            ForgotpasBtn.RippleOpacity = 0.3F;
+            ForgotpasBtn.RippleRadiusMultiplier = 0.6F;
+            ForgotpasBtn.ShadowBlur = 5;
+            ForgotpasBtn.ShadowColor = Color.FromArgb(100, 0, 0, 0);
+            ForgotpasBtn.ShadowOffset = new Point(2, 2);
+            ForgotpasBtn.ShakeDuration = 500;
+            ForgotpasBtn.ShakeIntensity = 5;
+            ForgotpasBtn.Size = new Size(163, 41);
+            ForgotpasBtn.TabIndex = 17;
+            ForgotpasBtn.Text = "forgot password?";
+            ForgotpasBtn.TextAlign = ContentAlignment.MiddleCenter;
+            ForgotpasBtn.TextColor = Color.FromArgb(231, 111, 81);
+            ForgotpasBtn.TooltipText = null;
+            ForgotpasBtn.UseAdvancedRendering = true;
+            ForgotpasBtn.UseParticles = false;
+            ForgotpasBtn.Click += ForgotpasBtn_Click;
+            // 
+            // LoginBackBtn
+            // 
+            LoginBackBtn.BackColor = Color.FromArgb(38, 70, 83);
+            LoginBackBtn.FlatStyle = FlatStyle.Popup;
+            LoginBackBtn.IconChar = FontAwesome.Sharp.IconChar.Reply;
+            LoginBackBtn.IconColor = Color.FromArgb(231, 111, 81);
+            LoginBackBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            LoginBackBtn.IconSize = 40;
+            LoginBackBtn.Location = new Point(8, 738);
+            LoginBackBtn.Margin = new Padding(4);
+            LoginBackBtn.Name = "LoginBackBtn";
+            LoginBackBtn.Size = new Size(66, 61);
+            LoginBackBtn.TabIndex = 14;
+            LoginBackBtn.UseVisualStyleBackColor = false;
+            LoginBackBtn.Click += LoginBackBtn_Click;
             // 
             // loginBtn
             // 
@@ -153,8 +250,9 @@
             loginBtn.IsReadOnly = false;
             loginBtn.IsToggleButton = false;
             loginBtn.IsToggled = false;
-            loginBtn.Location = new Point(24, 462);
+            loginBtn.Location = new Point(30, 578);
             loginBtn.LongPressDurationMS = 1000;
+            loginBtn.Margin = new Padding(4);
             loginBtn.Name = "loginBtn";
             loginBtn.NormalFontStyle = FontStyle.Regular;
             loginBtn.ParticleColor = Color.Transparent;
@@ -172,7 +270,7 @@
             loginBtn.ShadowOffset = new Point(2, 2);
             loginBtn.ShakeDuration = 500;
             loginBtn.ShakeIntensity = 5;
-            loginBtn.Size = new Size(130, 33);
+            loginBtn.Size = new Size(162, 41);
             loginBtn.TabIndex = 9;
             loginBtn.Text = "LOGIN";
             loginBtn.TextAlign = ContentAlignment.MiddleCenter;
@@ -189,10 +287,11 @@
             iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.Lock;
             iconPictureBox2.IconColor = Color.FromArgb(231, 111, 81);
             iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox2.IconSize = 29;
-            iconPictureBox2.Location = new Point(25, 403);
+            iconPictureBox2.IconSize = 36;
+            iconPictureBox2.Location = new Point(31, 504);
+            iconPictureBox2.Margin = new Padding(4);
             iconPictureBox2.Name = "iconPictureBox2";
-            iconPictureBox2.Size = new Size(40, 29);
+            iconPictureBox2.Size = new Size(50, 36);
             iconPictureBox2.TabIndex = 8;
             iconPictureBox2.TabStop = false;
             iconPictureBox2.Click += iconPictureBox2_Click;
@@ -228,10 +327,11 @@
             passwordTbx.HoverBorderColor1 = Color.Gray;
             passwordTbx.HoverBorderColor2 = Color.Gray;
             passwordTbx.IsEnabled = true;
-            passwordTbx.Location = new Point(61, 393);
+            passwordTbx.Location = new Point(76, 491);
+            passwordTbx.Margin = new Padding(4);
             passwordTbx.Name = "passwordTbx";
             passwordTbx.PlaceholderColor = Color.Gray;
-            passwordTbx.PlaceholderText = "Enter text here...";
+            passwordTbx.PlaceholderText = "Password";
             passwordTbx.ReadOnlyBorderColor1 = Color.LightGray;
             passwordTbx.ReadOnlyBorderColor2 = Color.LightGray;
             passwordTbx.ReadOnlyFillColor1 = Color.WhiteSmoke;
@@ -241,16 +341,17 @@
             passwordTbx.ShadowAnimationDuration = 1;
             passwordTbx.ShadowBlur = 10;
             passwordTbx.ShadowColor = Color.FromArgb(15, 0, 0, 0);
-            passwordTbx.Size = new Size(312, 50);
+            passwordTbx.Size = new Size(390, 62);
             passwordTbx.SolidBorderColor = Color.FromArgb(38, 70, 83);
             passwordTbx.SolidBorderFocusColor = Color.FromArgb(38, 70, 83);
             passwordTbx.SolidBorderHoverColor = Color.Gray;
             passwordTbx.SolidFillColor = Color.Transparent;
             passwordTbx.TabIndex = 7;
-            passwordTbx.Text = "Password";
             passwordTbx.TextPadding = new Padding(16, 0, 6, 0);
+            passwordTbx.UseSystemPasswordChar = true;
             passwordTbx.ValidationErrorMessage = "Invalid input.";
             passwordTbx.ValidationFunction = null;
+            passwordTbx.Click += passwordTbx_Click;
             // 
             // iconPictureBox1
             // 
@@ -259,10 +360,11 @@
             iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.User;
             iconPictureBox1.IconColor = Color.FromArgb(231, 111, 81);
             iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox1.IconSize = 31;
-            iconPictureBox1.Location = new Point(24, 336);
+            iconPictureBox1.IconSize = 39;
+            iconPictureBox1.Location = new Point(30, 420);
+            iconPictureBox1.Margin = new Padding(4);
             iconPictureBox1.Name = "iconPictureBox1";
-            iconPictureBox1.Size = new Size(31, 31);
+            iconPictureBox1.Size = new Size(39, 39);
             iconPictureBox1.TabIndex = 6;
             iconPictureBox1.TabStop = false;
             // 
@@ -297,10 +399,11 @@
             usernameTbx.HoverBorderColor1 = Color.Gray;
             usernameTbx.HoverBorderColor2 = Color.Gray;
             usernameTbx.IsEnabled = true;
-            usernameTbx.Location = new Point(61, 326);
+            usernameTbx.Location = new Point(76, 408);
+            usernameTbx.Margin = new Padding(4);
             usernameTbx.Name = "usernameTbx";
             usernameTbx.PlaceholderColor = Color.Gray;
-            usernameTbx.PlaceholderText = "Enter text here...";
+            usernameTbx.PlaceholderText = "Username";
             usernameTbx.ReadOnlyBorderColor1 = Color.LightGray;
             usernameTbx.ReadOnlyBorderColor2 = Color.LightGray;
             usernameTbx.ReadOnlyFillColor1 = Color.WhiteSmoke;
@@ -310,13 +413,12 @@
             usernameTbx.ShadowAnimationDuration = 1;
             usernameTbx.ShadowBlur = 10;
             usernameTbx.ShadowColor = Color.FromArgb(15, 0, 0, 0);
-            usernameTbx.Size = new Size(312, 50);
+            usernameTbx.Size = new Size(390, 62);
             usernameTbx.SolidBorderColor = Color.FromArgb(38, 70, 83);
             usernameTbx.SolidBorderFocusColor = Color.FromArgb(38, 70, 83);
             usernameTbx.SolidBorderHoverColor = Color.Gray;
             usernameTbx.SolidFillColor = Color.Transparent;
             usernameTbx.TabIndex = 5;
-            usernameTbx.Text = "Username";
             usernameTbx.TextPadding = new Padding(16, 0, 6, 0);
             usernameTbx.ValidationErrorMessage = "Invalid input.";
             usernameTbx.ValidationFunction = null;
@@ -327,9 +429,10 @@
             siticoneLabel3.BackColor = Color.Transparent;
             siticoneLabel3.Font = new Font("MS Reference Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             siticoneLabel3.ForeColor = Color.FromArgb(231, 111, 81);
-            siticoneLabel3.Location = new Point(12, 257);
+            siticoneLabel3.Location = new Point(15, 321);
+            siticoneLabel3.Margin = new Padding(4, 0, 4, 0);
             siticoneLabel3.Name = "siticoneLabel3";
-            siticoneLabel3.Size = new Size(331, 29);
+            siticoneLabel3.Size = new Size(414, 36);
             siticoneLabel3.TabIndex = 4;
             siticoneLabel3.Text = "Pagasco_Surname";
             // 
@@ -338,9 +441,10 @@
             siticoneLabel1.BackColor = Color.Transparent;
             siticoneLabel1.Font = new Font("MS Reference Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             siticoneLabel1.ForeColor = Color.FromArgb(231, 111, 81);
-            siticoneLabel1.Location = new Point(12, 234);
+            siticoneLabel1.Location = new Point(15, 292);
+            siticoneLabel1.Margin = new Padding(4, 0, 4, 0);
             siticoneLabel1.Name = "siticoneLabel1";
-            siticoneLabel1.Size = new Size(341, 29);
+            siticoneLabel1.Size = new Size(426, 36);
             siticoneLabel1.TabIndex = 1;
             siticoneLabel1.Text = "Please follow the company username: ";
             // 
@@ -353,14 +457,15 @@
             PagascoLabel.Font = new Font("Impact", 48F, FontStyle.Regular, GraphicsUnit.Point, 0);
             PagascoLabel.IsAnimating = true;
             PagascoLabel.IsPaused = false;
-            PagascoLabel.Location = new Point(61, 12);
+            PagascoLabel.Location = new Point(76, 15);
+            PagascoLabel.Margin = new Padding(4);
             PagascoLabel.Name = "PagascoLabel";
             PagascoLabel.PauseDuration = 0;
             PagascoLabel.ShimmerColor = Color.FromArgb(231, 111, 81);
             PagascoLabel.ShimmerOpacity = 1F;
             PagascoLabel.ShimmerSpeed = 30;
             PagascoLabel.ShimmerWidth = 0.5F;
-            PagascoLabel.Size = new Size(429, 100);
+            PagascoLabel.Size = new Size(536, 125);
             PagascoLabel.TabIndex = 0;
             PagascoLabel.Text = "PAGAS.CO";
             PagascoLabel.ToolTipText = "";
@@ -398,7 +503,8 @@
     0.5F,
     1F
     };
-            siticonePanel2.Location = new Point(527, 0);
+            siticonePanel2.Location = new Point(658, 0);
+            siticonePanel2.Margin = new Padding(4);
             siticonePanel2.Name = "siticonePanel2";
             siticonePanel2.PatternStyle = System.Drawing.Drawing2D.HatchStyle.Max;
             siticonePanel2.RippleAlpha = 50;
@@ -407,13 +513,14 @@
             siticonePanel2.RippleMaxSize = 600F;
             siticonePanel2.RippleSpeed = 15F;
             siticonePanel2.ShowBorder = true;
-            siticonePanel2.Size = new Size(571, 643);
+            siticonePanel2.Size = new Size(714, 804);
             siticonePanel2.TabIndex = 2;
             siticonePanel2.TabStop = true;
             siticonePanel2.UseBorderGradient = false;
             siticonePanel2.UseMultiGradient = false;
             siticonePanel2.UsePatternTexture = false;
             siticonePanel2.UseRadialGradient = false;
+            siticonePanel2.MouseDown += panel_MouseDown;
             // 
             // createaccBtn
             // 
@@ -463,8 +570,9 @@
             createaccBtn.IsReadOnly = false;
             createaccBtn.IsToggleButton = false;
             createaccBtn.IsToggled = false;
-            createaccBtn.Location = new Point(17, 570);
+            createaccBtn.Location = new Point(21, 712);
             createaccBtn.LongPressDurationMS = 1000;
+            createaccBtn.Margin = new Padding(4);
             createaccBtn.Name = "createaccBtn";
             createaccBtn.NormalFontStyle = FontStyle.Regular;
             createaccBtn.ParticleColor = Color.Transparent;
@@ -482,7 +590,7 @@
             createaccBtn.ShadowOffset = new Point(2, 2);
             createaccBtn.ShakeDuration = 500;
             createaccBtn.ShakeIntensity = 5;
-            createaccBtn.Size = new Size(121, 35);
+            createaccBtn.Size = new Size(151, 44);
             createaccBtn.TabIndex = 13;
             createaccBtn.Text = "CREATE";
             createaccBtn.TextAlign = ContentAlignment.MiddleCenter;
@@ -500,9 +608,10 @@
             LoginExtBtn.IconColor = Color.FromArgb(231, 111, 81);
             LoginExtBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             LoginExtBtn.IconSize = 30;
-            LoginExtBtn.Location = new Point(528, 7);
+            LoginExtBtn.Location = new Point(660, 9);
+            LoginExtBtn.Margin = new Padding(4);
             LoginExtBtn.Name = "LoginExtBtn";
-            LoginExtBtn.Size = new Size(35, 29);
+            LoginExtBtn.Size = new Size(44, 36);
             LoginExtBtn.TabIndex = 12;
             LoginExtBtn.UseVisualStyleBackColor = false;
             LoginExtBtn.Click += LoginExtBtn_Click;
@@ -516,46 +625,33 @@
             ManagerLabel.Font = new Font("MS Reference Sans Serif", 10.2F);
             ManagerLabel.IsAnimating = true;
             ManagerLabel.IsPaused = false;
-            ManagerLabel.Location = new Point(17, 520);
+            ManagerLabel.Location = new Point(21, 650);
+            ManagerLabel.Margin = new Padding(4);
             ManagerLabel.Name = "ManagerLabel";
             ManagerLabel.PauseDuration = 0;
             ManagerLabel.ShimmerColor = Color.FromArgb(38, 70, 83);
             ManagerLabel.ShimmerOpacity = 1F;
             ManagerLabel.ShimmerSpeed = 50;
             ManagerLabel.ShimmerWidth = 0.2F;
-            ManagerLabel.Size = new Size(311, 44);
+            ManagerLabel.Size = new Size(389, 55);
             ManagerLabel.TabIndex = 0;
             ManagerLabel.Text = "No Manager Account? sign up now!";
             ManagerLabel.ToolTipText = "";
             ManagerLabel.Click += ManagerLabel_Click;
             // 
-            // LoginBackBtn
-            // 
-            LoginBackBtn.BackColor = Color.FromArgb(38, 70, 83);
-            LoginBackBtn.FlatStyle = FlatStyle.Popup;
-            LoginBackBtn.IconChar = FontAwesome.Sharp.IconChar.Reply;
-            LoginBackBtn.IconColor = Color.FromArgb(231, 111, 81);
-            LoginBackBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            LoginBackBtn.IconSize = 40;
-            LoginBackBtn.Location = new Point(6, 590);
-            LoginBackBtn.Name = "LoginBackBtn";
-            LoginBackBtn.Size = new Size(53, 49);
-            LoginBackBtn.TabIndex = 14;
-            LoginBackBtn.UseVisualStyleBackColor = false;
-            LoginBackBtn.Click += LoginBackBtn_Click;
-            // 
             // ManagerLogin
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1098, 643);
-            Controls.Add(siticonePanel1);
+            ClientSize = new Size(1372, 804);
+            Controls.Add(ForgotPassBtn);
             Controls.Add(siticonePanel2);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(4);
             Name = "ManagerLogin";
             Text = "ManagerLogin";
             Load += ManagerLogin_Load;
-            siticonePanel1.ResumeLayout(false);
+            ForgotPassBtn.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)iconPictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
             siticonePanel2.ResumeLayout(false);
@@ -564,7 +660,7 @@
 
         #endregion
 
-        private SiticoneNetCoreUI.SiticonePanel siticonePanel1;
+        private SiticoneNetCoreUI.SiticonePanel ForgotPassBtn;
         private SiticoneNetCoreUI.SiticoneLabel siticoneLabel1;
         private SiticoneNetCoreUI.SiticoneShimmerLabel PagascoLabel;
         private SiticoneNetCoreUI.SiticoneTextBox usernameTbx;
@@ -578,5 +674,6 @@
         private FontAwesome.Sharp.IconButton LoginExtBtn;
         private SiticoneNetCoreUI.SiticoneButton createaccBtn;
         private FontAwesome.Sharp.IconButton LoginBackBtn;
+        private SiticoneNetCoreUI.SiticoneButton ForgotpasBtn;
     }
 }

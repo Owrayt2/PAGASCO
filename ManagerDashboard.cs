@@ -7,22 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
+using System.Data.OleDb;
 
 namespace PAGASCO
 {
     public partial class ManagerDashboard : Form
     {
-        private Dictionary<string, FuelStock> branchStocks = new Dictionary<string, FuelStock>();
-        private DataGridView dataGridView;
-        private ComboBox branchComboBox;
+        private Database database; // Declare the database field inside the class
+
         bool sidebarExpand = true;
 
         public ManagerDashboard()
         {
             InitializeComponent();
-
-
-
+            database = new Database(); // Initialize the database object in the constructor
         }
 
         private void sidebarTransition_Tick(object sender, EventArgs e)
@@ -39,7 +38,7 @@ namespace PAGASCO
             else
             {
                 sidebar.Width += 10;
-                if (sidebar.Width >= 382)
+                if (sidebar.Width >= 479)
                 {
                     sidebarExpand = true;
                     sidebarTransition.Stop();
@@ -60,22 +59,43 @@ namespace PAGASCO
 
         private void branchesComBx_SelectedIndexChanged(object sender, EventArgs e)
         {
+            try
+            {
+                // Get the selected branch name
+                string selectedBranch = branchesComBx.SelectedItem.ToString();
 
+                // Fetch the branchID for the selected branch
+                int branchID = database.GetBranchID(selectedBranch);
+
+                if (branchID != -1) // Ensure a valid branchID was found
+                {
+                    // Fetch fuel stocks for the selected branch using the Database class
+                    DataTable fuelStocks = database.GetFuelStocks(branchID);
+
+                    // Bind the DataTable to the DataGridView
+                    FuelStocksDGV.DataSource = fuelStocks;
+                }
+                else
+                {
+                    MessageBox.Show("Branch ID not found for the selected branch.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading fuel stocks: " + ex.Message);
+            }
         }
 
         private void AddFuelTbx_Click(object sender, EventArgs e)
         {
-
         }
 
         private void LoadBtn_Click(object sender, EventArgs e)
         {
-
         }
 
         private void FuelStocksDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
         }
 
         private void DashBoardExtBtn_Click(object sender, EventArgs e)
@@ -86,33 +106,26 @@ namespace PAGASCO
 
         private void iconButton1_Click(object sender, EventArgs e)  //addstockBtn
         {
-            
         }
 
         private void addbranchBtn_Click(object sender, EventArgs e)
         {
-
         }
 
         private void SaveStockBtn_Click(object sender, EventArgs e)
         {
-
         }
 
         private void iconPictureBox1_Click(object sender, EventArgs e)
         {
-
         }
 
         private void PagascoLabel_Click(object sender, EventArgs e)
         {
-
         }
-
 
         private void siticonePanel3_Paint(object sender, PaintEventArgs e)
         {
-
         }
 
         private void LogOutBtn_Click(object sender, EventArgs e)
@@ -128,82 +141,47 @@ namespace PAGASCO
             }
         }
 
-
-
         private void SalesBtn_Click(object sender, EventArgs e)
         {
             SalesPanel.BringToFront();
             sidebar.BringToFront();
         }
 
-        private void siticoneShimmerLabel1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void SalesPanel_Paint_1(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void siticoneShimmerLabel2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void siticoneLabel1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void iconPictureBox2_Click(object sender, EventArgs e)
         {
-
         }
-
-
 
         private void BranchBtn_Paint(object sender, PaintEventArgs e)
         {
-
-
-
         }
 
         private void siticonePanel2_Paint(object sender, PaintEventArgs e)
         {
-
         }
 
         private void siticoneLabel3_Click(object sender, EventArgs e)
         {
-
         }
 
         private void sidebar_Paint(object sender, PaintEventArgs e)
         {
             sidebar.BringToFront();
-
         }
 
         private void SalesPanel_Paint(object sender, PaintEventArgs e)
         {
-
         }
 
         private void DateSalesCombox_SelectedIndexChanged(object sender, EventArgs e)
         {
-
         }
 
         private void label3_Click(object sender, EventArgs e)
         {
-
         }
 
         private void label7_Click(object sender, EventArgs e)
         {
-
         }
 
         private void AboutPGSCBtn_Click(object sender, EventArgs e)
@@ -214,13 +192,73 @@ namespace PAGASCO
 
         private void AccountSetPanel_Paint(object sender, PaintEventArgs e)
         {
-
         }
 
         private void AccSettingsBtn_Click(object sender, EventArgs e)
         {
             AccountSetPanel.BringToFront();
             sidebar.BringToFront();
+        }
+
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
+
+        [DllImport("User32.dll")]
+        public static extern bool ReleaseCapture();
+
+        [DllImport("User32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+
+        private void Panel_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
+
+        }
+
+        private void usernameTbx_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void ManagerDashboard_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                // Fetch branch names using the Database class
+                List<string> branchNames = database.GetBranchNames();
+
+                // Populate the ComboBox with branch names
+                foreach (string branchName in branchNames)
+                {
+                    branchesComBx.Items.Add(branchName);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading branches: " + ex.Message);
+            }
+        }
+
+        private void Panel2_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
+
+        }
+
+        private void Panel3_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
         }
     }
 
